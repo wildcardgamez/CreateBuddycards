@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:scorchia"
+  },
+  "result": "createbuddycards:scorchia_card_stand",
+  "count": 2
+}

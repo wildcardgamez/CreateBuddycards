@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "createbuddycards:buddycard_pack_create",
+      "required": false
+    }
+  ]
+}

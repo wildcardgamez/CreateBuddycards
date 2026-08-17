@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "buddycards:buddycards"
+    }
+  ],
+  "results": [
+    {
+      "item": "createbuddycards:shredded_buddycard",
+      "chance": 1
+    },
+    {
+      "item": "createbuddycards:shredded_buddycard",
+      "chance": 0.2
+    }
+  ],
+  "processingTime": 400
+}

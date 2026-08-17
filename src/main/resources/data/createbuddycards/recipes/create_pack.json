@@ -1,0 +1,51 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "forge:plates/copper"
+  },
+  "transitionalItem": {
+    "item": "createbuddycards:unfinished_buddycard_pack"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createbuddycards:unfinished_buddycard_pack"
+        },
+        {
+          "item": "createbuddycards:recycled_buddycard"
+        }
+      ],
+      "results": [
+        {
+          "item": "createbuddycards:unfinished_buddycard_pack"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "createbuddycards:unfinished_buddycard_pack"
+        },
+        {
+          "fluid": "minecraft:lava",
+          "nbt": {},
+          "amount": 125
+        }
+      ],
+      "results": [
+        {
+          "item": "createbuddycards:unfinished_buddycard_pack"
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "createbuddycards:buddycard_pack_create"
+    }
+  ],
+  "loops": 4
+}

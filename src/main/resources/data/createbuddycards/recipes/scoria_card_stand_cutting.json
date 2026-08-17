@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:scoria"
+  },
+  "result": "createbuddycards:scoria_card_stand",
+  "count": 2
+}

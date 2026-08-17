@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "createbuddycards:shredded_buddycard"
+    },
+    {
+      "item": "createbuddycards:shredded_buddycard"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 125
+    }
+  ],
+  "results": [
+    {
+      "item": "createbuddycards:recycled_buddycard"
+    }
+  ]
+}

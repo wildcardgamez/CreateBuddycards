@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:crimsite"
+  },
+  "result": "createbuddycards:crimsite_card_stand",
+  "count": 2
+}

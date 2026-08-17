@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "tag": "buddycards:buddycard_packs"
+    }
+  ],
+  "results": [
+    {
+      "item": "createbuddycards:shredded_buddycard",
+      "count": 6
+    },
+    {
+      "item": "createbuddycards:shredded_buddycard",
+      "chance": 0.5
+    }
+  ],
+  "processingTime": 600
+}

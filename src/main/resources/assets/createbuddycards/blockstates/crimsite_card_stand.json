@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "createbuddycards:block/crimsite_card_stand"
+    },
+    "facing=east": {
+      "model": "createbuddycards:block/crimsite_card_stand",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "createbuddycards:block/crimsite_card_stand",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "createbuddycards:block/crimsite_card_stand",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:limestone"
+  },
+  "result": "createbuddycards:limestone_card_stand",
+  "count": 2
+}
