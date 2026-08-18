@@ -46,13 +46,10 @@ public class RegistryHandler {
         RECYCLED_BUDDYCARD = ITEMS.register("recycled_buddycard", () -> new Item(BuddycardsItems.DEFAULT_PROPERTIES));
         UNFINISHED_PACK = ITEMS.register("unfinished_buddycard_pack", () -> new SequencedAssemblyItem(new Item.Properties()));
 
-        registerCards(1, 12, Rarity.COMMON, CREATE_REQUIREMENT);
-        registerCards(13, 9, Rarity.UNCOMMON, CREATE_REQUIREMENT);
-        registerCards(22, 4, Rarity.RARE, CREATE_REQUIREMENT);
-        registerCards(26, 2, Rarity.EPIC, CREATE_REQUIREMENT);
-        registerCards(28, 4, Rarity.COMMON, CREATE_REQUIREMENT);
-        registerCards(32, 3, Rarity.UNCOMMON, CREATE_REQUIREMENT);
-        registerCards(35, 2, Rarity.RARE, CREATE_REQUIREMENT);
+        registerCards(1, 16, Rarity.COMMON, CREATE_REQUIREMENT);
+        registerCards(17, 12, Rarity.UNCOMMON, CREATE_REQUIREMENT);
+        registerCards(29, 6, Rarity.RARE, CREATE_REQUIREMENT);
+        registerCards(35, 2, Rarity.EPIC, CREATE_REQUIREMENT);
 
         ASURINE_CARD_STAND = registerStand("asurine_card_stand", () -> new CardStandBlock(BlockBehaviour.Properties.of().destroyTime(1.25f).mapColor(MapColor.COLOR_BLUE)));
         CRIMSITE_CARD_STAND = registerStand("crimsite_card_stand", () -> new CardStandBlock(BlockBehaviour.Properties.of().destroyTime(1.25f).mapColor(MapColor.COLOR_RED)));
