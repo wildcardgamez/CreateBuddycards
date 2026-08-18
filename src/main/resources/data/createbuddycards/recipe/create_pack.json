@@ -19,7 +19,7 @@
       ],
       "results": [
         {
-          "item": "createbuddycards:unfinished_buddycard_pack"
+          "id": "createbuddycards:unfinished_buddycard_pack"
         }
       ]
     },
@@ -37,14 +37,14 @@
       ],
       "results": [
         {
-          "item": "createbuddycards:unfinished_buddycard_pack"
+          "id": "createbuddycards:unfinished_buddycard_pack"
         }
       ]
     }
   ],
   "results": [
     {
-      "item": "createbuddycards:buddycard_pack_create"
+      "id": "createbuddycards:buddycard_pack_create"
     }
   ],
   "loops": 4

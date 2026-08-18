@@ -16,7 +16,7 @@
   ],
   "result":
   {
-    "item": "createbuddycards:playmat_create",
+    "id": "createbuddycards:playmat_create",
     "count": 1
   }
 }

@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "create:scoria"
   },
-  "result": "createbuddycards:scoria_card_stand",
-  "count": 2
+  "result": {
+    "count": 2,
+    "id": "createbuddycards:scoria_card_stand"
+  }
 }

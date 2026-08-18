@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "create:scorchia"
   },
-  "result": "createbuddycards:scorchia_card_stand",
-  "count": 2
+  "result": {
+    "count": 2,
+    "id": "createbuddycards:scorchia_card_stand"
+  }
 }

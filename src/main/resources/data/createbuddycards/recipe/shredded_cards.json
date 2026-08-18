@@ -7,11 +7,11 @@
   ],
   "results": [
     {
-      "item": "createbuddycards:shredded_buddycard",
+      "id": "createbuddycards:shredded_buddycard",
       "chance": 1
     },
     {
-      "item": "createbuddycards:shredded_buddycard",
+      "id": "createbuddycards:shredded_buddycard",
       "chance": 0.2
     }
   ],

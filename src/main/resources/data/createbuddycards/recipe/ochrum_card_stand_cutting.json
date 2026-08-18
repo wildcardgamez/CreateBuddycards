@@ -3,6 +3,8 @@
   "ingredient": {
     "item": "create:ochrum"
   },
-  "result": "createbuddycards:ochrum_card_stand",
-  "count": 2
+  "result": {
+    "count": 2,
+    "id": "createbuddycards:ochrum_card_stand"
+  }
 }

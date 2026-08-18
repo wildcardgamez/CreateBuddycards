@@ -1,26 +1,44 @@
 package com.wildcard.createbuddycards;
 
-import com.wildcard.buddycards.item.IMedalTypes;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Player;
+import com.google.common.collect.Multimap;
+import com.wildcard.buddycards.gear.IMedalTypes;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+
+import java.util.Optional;
 
 public enum MedalTypes implements IMedalTypes {
-    CREATE_SET((player, mod) -> {
-        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 300, mod, true, false));
+    CREATE_SET(null, (map, mod) -> {
+        map.put(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(ResourceLocation.withDefaultNamespace("interaction"), (mod + 1) * 0.5, AttributeModifier.Operation.ADD_VALUE));
     });
 
-    MedalTypes(MedalTypes.MedalEffect effect) {
-        this.effect = effect;
+    MedalTypes(MedalTick effect, MedalAttributes attributes) {
+        this.effect = Optional.ofNullable(effect);
+        this.attributes = Optional.ofNullable(attributes);
     }
-    private final MedalTypes.MedalEffect effect;
+
+    private final Optional<MedalTick> effect;
+    private final Optional<MedalAttributes> attributes;
 
     @Override
-    public void applyEffect(Player player, int mod) {
-        effect.applyEffect(player, mod);
+    public void effectTick(LivingEntity player, int mod) {
+        effect.ifPresent(medalTick -> medalTick.applyEffect(player, mod));
     }
 
-    interface MedalEffect {
-        void applyEffect(Player player, int mod);
+    @Override
+    public void applyAttributes(Multimap<Holder<Attribute>, AttributeModifier> map, int mod) {
+        attributes.ifPresent(medalAttributes -> medalAttributes.applyAttributes(map, mod));
+    }
+
+    interface MedalTick {
+        void applyEffect(LivingEntity player, int mod);
+    }
+
+    interface MedalAttributes {
+        void applyAttributes(Multimap<Holder<Attribute>, AttributeModifier> map, int mod);
     }
 }

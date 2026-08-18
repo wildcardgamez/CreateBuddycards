@@ -7,7 +7,7 @@
   ],
   "result":
   {
-    "item": "createbuddycards:buddycard_pack_create",
+    "id": "createbuddycards:buddycard_pack_create",
     "count": 6
   }
 }

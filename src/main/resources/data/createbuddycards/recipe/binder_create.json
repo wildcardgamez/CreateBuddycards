@@ -16,7 +16,7 @@
   ],
   "result":
   {
-    "item": "createbuddycards:buddycard_binder_create",
+    "id": "createbuddycards:buddycard_binder_create",
     "count": 1
   }
 }
