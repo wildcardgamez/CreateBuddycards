@@ -22,5 +22,5 @@
       "id": "buddycards:buddysteel_ingot"
     }
   ],
-  "heatRequirement": "heated"
+  "heat_requirement": "heated"
 }

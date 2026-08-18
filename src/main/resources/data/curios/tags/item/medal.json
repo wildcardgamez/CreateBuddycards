@@ -1,8 +1,6 @@
 {
-  "replace": "false",
+  "replace": false,
   "values": [
-    "createbuddycards:buddysteel_medal_create",
-    "createbuddycards:luminis_medal_create",
-    "createbuddycards:zylex_medal_create"
+    "createbuddycards:buddysteel_medal_create"
   ]
 }

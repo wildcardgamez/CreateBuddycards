@@ -13,8 +13,8 @@ import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@Mod(value = Buddycards.MOD_ID)
-@EventBusSubscriber(modid = Buddycards.MOD_ID)
+@Mod(value = CreateBuddycards.MOD_ID)
+@EventBusSubscriber(modid = CreateBuddycards.MOD_ID)
 public class Datagen {
     @SubscribeEvent
     static void onGatherData(GatherDataEvent event) {
@@ -30,6 +30,15 @@ public class Datagen {
         protected void registerModels() {
             for (int i = 1; i <= 36; i++) {
                 genCardModel(i);
+            }
+            ItemModelBuilder medal = getBuilder(ModelProvider.ITEM_FOLDER + "/buddysteel_medal_create")
+                    .parent(factory.apply(ResourceLocation.withDefaultNamespace("item/generated")))
+                    .texture("layer0", ResourceLocation.fromNamespaceAndPath(CreateBuddycards.MOD_ID, ModelProvider.ITEM_FOLDER + "/create" + "_set/" + "medal"));
+            for (int i = 1; i < 5; i++) {
+                ItemModelBuilder tierMedal = getBuilder(ModelProvider.ITEM_FOLDER + "/buddysteel_medal_create" + i)
+                        .parent(factory.apply(ResourceLocation.withDefaultNamespace("item/generated")))
+                        .texture("layer0", ResourceLocation.fromNamespaceAndPath(CreateBuddycards.MOD_ID, ModelProvider.ITEM_FOLDER + "/create" + "_set/" + "medal" + i));
+                medal.override().predicate(ResourceLocation.fromNamespaceAndPath(Buddycards.MOD_ID, "tier"), i).model(tierMedal);
             }
         }
 

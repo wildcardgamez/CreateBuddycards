@@ -1,10 +1,10 @@
 {
   "type": "create:sequenced_assembly",
   "ingredient": {
-    "tag": "forge:plates/copper"
+    "tag": "c:plates/copper"
   },
-  "transitionalItem": {
-    "item": "createbuddycards:unfinished_buddycard_pack"
+  "transitional_item": {
+    "id": "createbuddycards:unfinished_buddycard_pack"
   },
   "sequence": [
     {
@@ -31,7 +31,7 @@
         },
         {
           "fluid": "minecraft:lava",
-          "nbt": {},
+          "type": "neoforge:single",
           "amount": 125
         }
       ],

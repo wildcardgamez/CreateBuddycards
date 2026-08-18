@@ -1,11 +1,16 @@
 package com.wildcard.createbuddycards;
 
+import com.simibubi.create.api.registry.CreateBuiltInRegistries;
+import com.simibubi.create.api.registry.CreateRegistries;
+import com.simibubi.create.content.logistics.item.filter.attribute.ItemAttributeType;
+import com.simibubi.create.content.logistics.item.filter.attribute.SingletonItemAttribute;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.wildcard.buddycards.block.BuddycardBoosterBoxBlock;
 import com.wildcard.buddycards.block.CardStandBlock;
 import com.wildcard.buddycards.core.BuddycardSet;
 import com.wildcard.buddycards.item.*;
 import com.wildcard.buddycards.registries.BuddycardsBlocks;
+import com.wildcard.buddycards.registries.BuddycardsComponents;
 import com.wildcard.buddycards.registries.BuddycardsItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -16,6 +21,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -24,6 +30,7 @@ import java.util.function.Supplier;
 public class RegistryHandler {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CreateBuddycards.MOD_ID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateBuddycards.MOD_ID);
+    public static final DeferredRegister<ItemAttributeType> FILTER_ATTRIBUTES = DeferredRegister.create(CreateBuiltInRegistries.ITEM_ATTRIBUTE_TYPE, CreateBuddycards.MOD_ID);
 
     public static void registerAll(IEventBus eventBus) {
         BOOSTER_BOX = BLOCKS.register("buddycard_booster_box_create", () -> new BuddycardBoosterBoxBlock(BuddycardsItems.DEFAULT_BUDDYCARD_REQUIREMENT, BuddycardsBlocks.BOOSTER_BOX_PROPERTIES));
@@ -31,7 +38,7 @@ public class RegistryHandler {
         PACK = ITEMS.register("buddycard_pack_create", () -> new BuddycardSetPackItem(CREATE_SET, 4, 1, BuddycardsItems.DEFAULT_RARITY_WEIGHTS, BuddycardsItems.DEFAULT_PACK_PROPERTIES));
         BINDER = ITEMS.register("buddycard_binder_create", () -> new BuddycardBinderItem(BuddycardsItems.DEFAULT_BINDER_PROPERTIES, CREATE_SET, ResourceLocation.fromNamespaceAndPath(CreateBuddycards.MOD_ID, "textures/gui/buddycard_binder_create.png"), false));
         LARGE_BINDER = ITEMS.register("large_buddycard_binder_create", () -> new BuddycardBinderItem(BuddycardsItems.DEFAULT_BINDER_PROPERTIES, CREATE_SET, ResourceLocation.fromNamespaceAndPath(CreateBuddycards.MOD_ID, "textures/gui/large_buddycard_binder_create.png"), true));
-        MEDAL = ITEMS.register("buddysteel_medal_create", () -> new BuddysteelSetMedalItem(MedalTypes.CREATE_SET, CREATE_SET, BuddycardsItems.DEFAULT_CURIO_PROPERTIES));
+        MEDAL = ITEMS.register("buddysteel_medal_create", () -> new BuddysteelSetMedalItem(MedalTypes.CREATE_SET, CREATE_SET, new Item.Properties().stacksTo(1).component(BuddycardsComponents.COLLECTION_TIER, 0)));
 
         BOOSTER_BOX_ITEM = ITEMS.register("buddycard_booster_box_create", () -> new BuddycardBoosterBoxItem(BOOSTER_BOX.get(), PACK, BuddycardsItems.DEFAULT_UNCOMMON_PROPERTIES));
 
@@ -63,8 +70,12 @@ public class RegistryHandler {
         ITEMS.register("scorchia_card_stand", () -> new BlockItem(SCORCHIA_CARD_STAND.get(), BuddycardsItems.DEFAULT_PROPERTIES));
         ITEMS.register("veridium_card_stand", () -> new BlockItem(VERIDIUM_CARD_STAND.get(), BuddycardsItems.DEFAULT_PROPERTIES));
 
+        FOIL_ATTRIBUTE = FILTER_ATTRIBUTES.register("buddycard_foil", BuddycardFoilAttribute.Type::new);
+        GRADE_ATTRIBUTE = FILTER_ATTRIBUTES.register("buddycard_grade", BuddycardGradeAttribute.Type::new);
+
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
+        FILTER_ATTRIBUTES.register(eventBus);
     }
 
     public static final BuddycardSet CREATE_SET = new BuddycardSet("create");
@@ -91,6 +102,9 @@ public class RegistryHandler {
     public static DeferredBlock<CardStandBlock> SCORIA_CARD_STAND;
     public static DeferredBlock<CardStandBlock> SCORCHIA_CARD_STAND;
     public static DeferredBlock<CardStandBlock> VERIDIUM_CARD_STAND;
+
+    public static DeferredHolder<ItemAttributeType, ItemAttributeType> FOIL_ATTRIBUTE;
+    public static DeferredHolder<ItemAttributeType, ItemAttributeType> GRADE_ATTRIBUTE;
 
 
     public static void registerCards(int startValue, int amount, Rarity rarity, BuddycardsItems.BuddycardRequirement requirement) {

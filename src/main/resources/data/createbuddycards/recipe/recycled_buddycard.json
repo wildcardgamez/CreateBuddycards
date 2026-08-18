@@ -8,6 +8,7 @@
       "item": "createbuddycards:shredded_buddycard"
     },
     {
+      "type": "neoforge:single",
       "fluid": "minecraft:water",
       "amount": 125
     }

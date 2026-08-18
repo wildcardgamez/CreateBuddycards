@@ -1,9 +1,7 @@
 package com.wildcard.createbuddycards;
 
-import com.wildcard.buddycards.Buddycards;
 import com.wildcard.buddycards.client.renderer.MedalRenderer;
 import com.wildcard.buddycards.item.BuddycardItem;
-import com.wildcard.buddycards.registries.BuddycardsItems;
 import com.wildcard.buddycards.registries.BuddycardsMisc;
 import net.minecraft.world.item.Item;
 import net.neoforged.api.distmarker.Dist;
@@ -15,8 +13,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
-@Mod(value = Buddycards.MOD_ID, dist = Dist.CLIENT)
-@EventBusSubscriber(modid = Buddycards.MOD_ID, value = Dist.CLIENT)
+@Mod(value = CreateBuddycards.MOD_ID, dist = Dist.CLIENT)
+@EventBusSubscriber(modid = CreateBuddycards.MOD_ID, value = Dist.CLIENT)
 public class ClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
@@ -37,10 +35,6 @@ public class ClientEvents {
     }
 
     public static void setupRenderers() {
-        CuriosRendererRegistry.register(BuddycardsItems.MEDAL_CAVE.get(), () -> new MedalRenderer(getMedalId("buddysteel_medal_create")));
-    }
-
-    protected static String getMedalId(String name) {
-        return "textures/models/medal/" + name;
+        CuriosRendererRegistry.register(RegistryHandler.MEDAL.get(), () -> new MedalRenderer("textures/models/medal/buddysteel_medal_create"));
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-03T18:13:13.5112953	Item Models: createbuddycards
+// 1.21.1	2026-08-17T23:03:51.9370664	Item Models: createbuddycards
 2e2cc54b7d990831a4dfa9b634a186d49f52f4ae assets/createbuddycards/models/item/buddycard_create1.json
 72d1f2ecd6eeb7e4dcae40057aa16494249109f0 assets/createbuddycards/models/item/buddycard_create10.json
 201a2f4e0e64fdaf1b0e74d1cf13447fbb35f134 assets/createbuddycards/models/item/buddycard_create10_g0_f1.json
@@ -863,3 +863,8 @@ fdac08e417f7d56fb20af253b2ed1ff794ec2857 assets/createbuddycards/models/item/bud
 d1c56365f8d828380b0625bf404564f38c387440 assets/createbuddycards/models/item/buddycard_create9_g5_f1.json
 121dff4a6b2d5797425cff5630c3f03a83842802 assets/createbuddycards/models/item/buddycard_create9_g5_f2.json
 54e9f8530ee1f637243d8ae9744ad60bcb9b4720 assets/createbuddycards/models/item/buddycard_create9_g5_f3.json
+1d53254833b13ad20cef84bab61efe41f31b86a5 assets/createbuddycards/models/item/buddysteel_medal_create.json
+da5494b0b0aa8048ac689b16c95cc6a463547bc8 assets/createbuddycards/models/item/buddysteel_medal_create1.json
+c11c666dd78772bb0b35853768670339b1c1d338 assets/createbuddycards/models/item/buddysteel_medal_create2.json
+512156410055bdfd6e7302c2f08d8cd7ea294edb assets/createbuddycards/models/item/buddysteel_medal_create3.json
+4bf85d0a75b1aad679decadd7d33615ae2ad56fc assets/createbuddycards/models/item/buddysteel_medal_create4.json
